@@ -118,16 +118,11 @@
             <p class="booking-lead">Book a free 30-minute call to discuss your localization needs</p>
             
             <div class="booking-wrapper">
-                <!-- Calendly inline widget begin -->
-                <div class="calendly-inline-widget" 
-                     data-url="https://calendly.com/lekcja/meet-me" 
-                     style="min-width:320px;height:700px;">
+                <div class="calendly-inline-widget"
+                     data-url="https://calendly.com/twoj-link"
+                     data-cookies="false"
+                     style="min-width:320px;height:630px;">
                 </div>
-                <script type="text/javascript" 
-                        src="https://assets.calendly.com/assets/external/widget.js" 
-                        async>
-                </script>
-                <!-- Calendly inline widget end -->
             </div>
         </div>
     </section>
@@ -229,6 +224,31 @@
             </div>
         </div>
     </section>
+
+    <!-- Cookie consent banner (simple, non-intrusive) -->
+<div id="cookie-banner" style="position:fixed;bottom:18px;left:50%;transform:translateX(-50%);
+    background:rgba(255,255,255,0.97);border-radius:14px;box-shadow:0 4px 24px rgba(0,0,0,0.08);
+    padding:16px 22px;z-index:9999;display:none;align-items:center;gap:18px;font-size:15px;">
+    Ta strona używa plików cookies do poprawnego działania. 
+    <button id="cookie-accept" style="margin-left:18px;padding:7px 18px;border-radius:999px;
+        background:#0071e3;color:#fff;border:none;font-weight:600;cursor:pointer;">
+        OK
+    </button>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var banner = document.getElementById('cookie-banner');
+    var btn = document.getElementById('cookie-accept');
+    if (!localStorage.getItem('cookieAccepted')) {
+        banner.style.display = 'flex';
+    }
+    btn.onclick = function() {
+        localStorage.setItem('cookieAccepted', '1');
+        banner.style.display = 'none';
+    };
+});
+</script>
 
     <script>
         // Po załadowaniu strony przewiń na sekcję #home (uwzględnia wysokość nawigacji)
