@@ -3,6 +3,7 @@
     --secondary-color: #0071e3;
     --background-color: #ffffff;
     --text-color: #1d1d1f;
+    --nav-height: 64px; /* use by JS to compute scroll offset; adjust if nav height changes */
 }
 
 * {
@@ -605,22 +606,18 @@ h3 {
 
 /* HERO SECTION */
 .hero-section {
+    padding-top: calc(var(--nav-height) + 18px);
+    padding-bottom: 28px;
     position: relative;
-    min-height: 76vh;
-    display: flex;
-    align-items: center;
-    padding: 80px 0;
-    background: linear-gradient(180deg, #ffffff 0%, #f4f8ff 100%);
+    z-index: 0;
     overflow: visible;
 }
 
 .hero-inner {
     display: flex;
-    gap: 40px;
     align-items: center;
-    justify-content: space-between;
-    position: relative;
-    z-index: 2;
+    gap: 28px;
+    flex-wrap: wrap;
 }
 
 /* left column content */
@@ -851,182 +848,103 @@ h3 {
     }
 }
 
-/* Responsive */
-@media (max-width: 980px) {
-    .services-cards { grid-template-columns: repeat(2, 1fr); }
-    .about-grid { grid-template-columns: 1fr; }
-    .photo-placeholder { margin-bottom: 10px; }
+/* Mobile-first responsive tweaks to fix overlapping hero and cropped photo */
+:root {
+  --nav-height: 64px; /* use by JS to compute scroll offset; adjust if nav height changes */
 }
 
-@media (max-width: 600px) {
-    .services-cards { grid-template-columns: 1fr; }
-    .service-card { flex-direction: row; }
-    .about-profile { padding: 16px; }
+.hero-section {
+  padding-top: calc(var(--nav-height) + 18px);
+  padding-bottom: 28px;
+  position: relative;
+  z-index: 0;
+  overflow: visible;
 }
 
-/* Booking section */
-.booking-section {
-    padding: 60px 0;
-    background: linear-gradient(180deg, #fbfdff 0%, #ffffff 100%);
-    position: relative;
-    overflow: hidden;
+.hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
 }
 
-.booking-lead {
-    text-align: center;
-    color: #475569;
-    margin: 0 auto 40px;
-    max-width: 600px;
+/* Desktop: keep existing two-column feel but ensure no overflow */
+@media (min-width: 901px) {
+  .hero-inner {
+    flex-direction: row;
+  }
+
+  .hero-visual .profile-photo {
+    max-width: 320px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+  }
 }
 
-.booking-wrapper {
-    max-width: 1024px; /* zwiększona szerokość z 840px */
+/* Mobile: stack content and visual; centre and constrain image so it's never cut off */
+@media (max-width: 900px) {
+  .hero-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-content {
+    order: 1;
+    padding: 0 16px;
+  }
+
+  .hero-visual {
+    order: 2;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 12px;
+    padding-bottom: 8px;
+  }
+
+  .hero-visual .profile-photo {
+    width: min(220px, 48vw);
+    height: auto;
+    max-height: calc(60vh - 80px);
+    object-fit: cover;
+    border-radius: 14px;
+    display: block;
     margin: 0 auto;
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 12px 40px rgba(8,20,40,0.08);
-    overflow: hidden;
-    border: 1px solid rgba(0,113,227,0.08);
+    box-shadow: 0 6px 18px rgba(0,113,227,0.08);
+  }
+
+  /* ensure next sections don't overlap hero */
+  .services-section,
+  #booking,
+  .about-section {
+    padding-top: 24px;
+  }
+
+  /* ensure nav toggle and links remain usable */
+  .nav-links.open {
+    position: fixed;
+    inset: var(--nav-height) 0 0 0;
+    overflow-y: auto;
+    background: #fff;
+  }
 }
 
-/* Zwiększamy wysokość widżetu Calendly */
-.calendly-inline-widget {
-    min-width: 320px;
-    height: 800px !important; /* wyższa wysokość */
-}
+/* Very small screens: tighten type and buttons */
+@media (max-width: 420px) {
+  .hero-content h1 {
+    font-size: 1.45rem;
+    line-height: 1.15;
+  }
 
-@media (max-width: 1080px) { /* dostosowany breakpoint */
-    .booking-wrapper {
-        margin: 0 -16px;
-        border-radius: 0;
-        border-left: 0;
-        border-right: 0;
-    }
-    
-    .calendly-inline-widget {
-        height: 900px !important; /* jeszcze wyższa na mobile */
-    }
-}
+  .hero-lead {
+    font-size: 0.95rem;
+  }
 
-/* Mobile optimizations */
-@media (max-width: 980px) {
-    /* Nawigacja */
-    nav {
-        height: 64px;
-        padding: 8px 0;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-    }
-
-    /* Hero section */
-    .hero-section {
-        margin-top: 64px; /* wysokość nawigacji */
-        min-height: auto;
-        padding: 40px 0;
-    }
-
-    .hero-inner {
-        flex-direction: column-reverse;
-        text-align: center;
-        gap: 20px;
-    }
-
-    .hero-content {
-        flex: 1;
-        max-width: 100%;
-        padding: 0 16px;
-    }
-
-    .hero-visual {
-        flex: none;
-        max-width: 240px;
-        margin: 20px auto 0;
-    }
-
-    .profile-photo {
-        width: 100%;
-        max-width: 240px;
-        margin: 0 auto;
-    }
-
-    /* Przyciski */
-    .hero-actions {
-        justify-content: center;
-        gap: 10px;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 20px;
-    }
-
-    .hero-actions .cta-button,
-    .hero-actions .btn.ghost {
-        width: 100%;
-        max-width: 280px;
-    }
-
-    /* Sekcje */
-    .services-section,
-    .booking-section,
-    .about-section,
-    .contact-section {
-        padding: 40px 0;
-        margin: 0;
-    }
-
-    /* Kalendarz */
-    .booking-wrapper {
-        margin: 0 -16px;
-        border-radius: 0;
-    }
-
-    .calendly-inline-widget {
-        height: 680px !important;
-        border: none;
-    }
-}
-
-@media (max-width: 480px) {
-    /* Mniejsze telefony */
-    .container {
-        padding: 0 12px;
-    }
-
-    .hero-section {
-        padding: 30px 0;
-    }
-
-    .hero-content h1 {
-        font-size: 26px;
-        line-height: 1.2;
-    }
-
-    .hero-visual {
-        max-width: 200px;
-    }
-
-    .profile-photo {
-        max-width: 200px;
-    }
-
-    /* Sekcje */
-    section {
-        padding: 30px 0;
-    }
-
-    h2 {
-        font-size: 22px;
-        margin-bottom: 16px;
-    }
-
-    /* Kalendarz */
-    .calendly-inline-widget {
-        height: 600px !important;
-    }
-
-    .booking-section {
-        padding: 20px 0;
-    }
+  .hero-actions .cta-button,
+  .hero-actions .btn {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
 }
