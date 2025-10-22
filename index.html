@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wojciech Mocek | Localization Services</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Wojciech Mocek — Localization Engineering & TMS Consulting</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
     <nav>
@@ -28,85 +28,106 @@
                 </svg>
             </a>
 
-            <div class="nav-links">
+            <div class="nav-links" id="navLinks" role="navigation" aria-label="Main Navigation">
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <a class="nav-cta" href="https://calendly.com/lekcja/meet-math-online" target="_blank" rel="noopener noreferrer">Book a meeting</a>
+                <a class="nav-cta" href="#booking">Book a meeting</a>
             </div>
 
-            <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
          </div>
      </nav>
 
     <header id="home" class="hero-section">
         <div class="container hero-inner">
             <div class="hero-content">
-                <h1>Professional Software<br>Localization</h1>
-                <p class="hero-lead">Specializing in technical translations, localization engineering and process optimisation for software, medical and technical domains.</p>
+                <h1>Localization Engineering & TMS Consulting</h1>
+                <p class="hero-lead">I help engineering and localization teams get localisation pipelines working reliably — TMS integrations, machine translation optimisation and fast technical troubleshooting.</p>
 
                 <div class="hero-actions">
-                    <a class="cta-button" href="https://calendly.com/lekcja/meet-math-online" target="_blank" rel="noopener noreferrer">Start a Project</a>
-                    <a class="btn ghost" href="#services">Explore Services</a>
+                    <a class="cta-button" href="#booking">Book a discovery call</a>
+                    <a class="btn ghost" href="#services">See services</a>
+                    <a class="btn ghost" href="#about">About me</a>
                 </div>
             </div>
 
             <div class="hero-visual" aria-hidden="false">
-                <!-- profile photo -->
-                <img class="profile-photo" src="IMG_4843.jpg" alt="Wojciech Mocek — Localization Engineer">
+                <img class="profile-photo" src="images/IMG_4843.jpg" alt="Wojciech Mocek — Localization Engineer">
             </div>
         </div>
     </header>
 
     <section id="services" class="services-section">
         <div class="container">
-            <h2>Services</h2>
-            <p class="services-lead">Comprehensive localisation and technical language services tailored for software, medical and technical industries.</p>
+            <h2>Core services</h2>
+            <p class="services-lead">TMS integrations, MT setup and fast technical fixes.</p>
 
             <div class="services-cards">
-                <article class="service-card">
-                    <div class="icon-wrap" aria-hidden="true">
-                        <!-- svg icon: localization -->
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <path d="M12 2v2" stroke="#0071e3" stroke-width="1.5" stroke-linecap="round"/>
-                            <path d="M12 20v2" stroke="#00c2ff" stroke-width="1.5" stroke-linecap="round"/>
-                            <circle cx="12" cy="12" r="6" stroke="#0071e3" stroke-width="1.5" fill="rgba(0,113,227,0.04)"/>
+                <article class="service-card" aria-labelledby="svc1-title">
+                    <div class="icon-wrap" aria-hidden="true" style="margin-bottom:8px;">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="4" width="20" height="16" rx="3" fill="#E8F6FF"/>
+                            <path d="M7 9h10M7 13h10" stroke="#0071e3" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M7 17h6" stroke="#00c2ff" stroke-width="1.2" stroke-linecap="round"/>
                         </svg>
                     </div>
-                    <h3>Software Localization</h3>
-                    <p>UI strings, resource files, and continuous localization pipelines for apps and SaaS.</p>
+                    <h3 id="svc1-title">1. TMS integration & automation</h3>
+                    <p>API connectors, automated file flows and project templates to link TMS with GitHub, CMS or CI.</p>
                 </article>
 
-                <article class="service-card">
-                    <div class="icon-wrap" aria-hidden="true">
-                        <!-- svg icon: translation -->
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <path d="M4 4h16M4 12h10M4 20h16" stroke="#0071e3" stroke-width="1.5" stroke-linecap="round"/>
+                <article class="service-card" aria-labelledby="svc2-title">
+                    <div class="icon-wrap" aria-hidden="true" style="margin-bottom:8px;">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" fill="#F0FBFF"/>
+                            <path d="M8 9c1.2-1 3-1 4 0s2.8 1 4 0" stroke="#0071e3" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M8 15c1.6-1.2 3.4-1.2 5 0 1.6 1.2 3.4 1.2 5 0" stroke="#00c2ff" stroke-width="1.2" stroke-linecap="round"/>
                         </svg>
                     </div>
-                    <h3>Technical Translation & Terminology</h3>
-                    <p>Domain-specific translation (medical, technical, pharmaceutical, chemical) with controlled terminology.</p>
+                    <h3 id="svc2-title">2. MT implementation & tuning</h3>
+                    <p>MT profiles, glossaries and quick QA to make machine translation usable and measurable.</p>
                 </article>
 
-                <article class="service-card">
-                    <div class="icon-wrap" aria-hidden="true">
-                        <!-- svg icon: automation -->
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <path d="M12 6v6l4 2" stroke="#0071e3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <circle cx="12" cy="12" r="9" stroke="#00c2ff" stroke-width="1.2" fill="rgba(0,194,255,0.03)"/>
+                <article class="service-card" aria-labelledby="svc3-title">
+                    <div class="icon-wrap" aria-hidden="true" style="margin-bottom:8px;">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="3" width="18" height="18" rx="4" fill="#F5FDFF"/>
+                            <path d="M7 12h10" stroke="#0071e3" stroke-width="1.6" stroke-linecap="round"/>
+                            <path d="M12 7v10" stroke="#00c2ff" stroke-width="1.2" stroke-linecap="round"/>
                         </svg>
                     </div>
-                    <h3>Process Automation & QA</h3>
-                    <p>Workflow optimisation, automated QA, and file versioning across many formats and CMS.</p>
+                    <h3 id="svc3-title">3. Troubleshooting & technical consulting</h3>
+                    <p>Fast fixes for encoding, tags, file formats and API/webhook failures — emergency support available.</p>
                 </article>
             </div>
 
             <div class="services-cta">
-                <a class="btn primary" href="#contact">Contact & Book</a>
-                <a class="btn ghost" href="#about">Learn More</a>
+                <a class="btn primary" href="#booking">Schedule a review</a>
+                <a class="btn ghost" href="#contact">Contact</a>
+            </div>
+        </div>
+    </section> <!-- koniec services-section -->
+
+    <!-- Nowa sekcja bookingu -->
+    <section id="booking" class="booking-section">
+        <div class="container">
+            <h2>Schedule a Consultation</h2>
+            <p class="booking-lead">Book a free 30-minute call to discuss your localization needs</p>
+            
+            <div class="booking-wrapper">
+                <!-- Calendly inline widget begin -->
+                <div class="calendly-inline-widget" 
+                     data-url="https://calendly.com/lekcja/meet-me" 
+                     style="min-width:320px;height:700px;">
+                </div>
+                <script type="text/javascript" 
+                        src="https://assets.calendly.com/assets/external/widget.js" 
+                        async>
+                </script>
+                <!-- Calendly inline widget end -->
             </div>
         </div>
     </section>
@@ -116,13 +137,13 @@
             <div class="about-grid">
                 <div class="about-profile">
                     <div class="photo-placeholder" role="img" aria-label="profile photo placeholder">WM</div>
-                    <h2>About Me</h2>
-                    <p class="tagline">Localization Engineer • Technical Writer • Math High Level Teacher — remote from Poland</p>
+                    <h2>About me</h2>
+                    <p class="tagline">Localization Engineer • TMS integrator • MT specialist — remote from Poland</p>
 
                     <div class="badges">
-                        <span class="badge">SDL TRADOS Certified</span>
-                        <span class="badge">Memsource Trainer</span>
-                        <span class="badge">TMS & CAT Expert</span>
+                        <span class="badge">TMS Integrations</span>
+                        <span class="badge">MT Optimization</span>
+                        <span class="badge">Localization Troubleshooting</span>
                     </div>
 
                     <div class="about-actions">
@@ -132,25 +153,21 @@
                 </div>
 
                 <div class="about-body">
-                    <p>I am Localization Engineer, Technical Writer and Math High Level Teacher. Freelancer based in Poland working remotely in all time zones.</p>
+                    <p>I help product and localization teams reduce time‑to‑market by building reliable localisation pipelines, tuning machine translation and resolving technical blockers. I combine hands‑on engineering with domain experience in software and medical/technical texts.</p>
 
-                    <h3>Selected Experience</h3>
+                    <h3>Selected experience</h3>
                     <ul class="timeline">
-                        <li><strong>Software & Localization:</strong> Chattanooga Group, Microsoft, Philips, Teva, Oridion</li>
-                        <li><strong>Medical & Technical Texts:</strong> biomedical, pharmaceutical, chemical, H&S texts</li>
-                        <li><strong>Government & Institutions:</strong> UK Ministry of Justice and academic collaborations in the US</li>
+                        <li><strong>Platform integrations:</strong> Wordbee, Phrase, Memsource — API flows and CI pipelines.</li>
+                        <li><strong>MT projects:</strong> DeepL/Google/Microsoft integration, glossary & prompt optimisation, evaluation.</li>
+                        <li><strong>Emergency support:</strong> Encoding, tagging, file conversion, API and webhook debugging.</li>
                     </ul>
 
-                    <h3>Services I Provide</h3>
+                    <h3>How I work — typical engagements</h3>
                     <ul class="compact-list">
-                        <li>Consultancy for L10n, I18n, T9n, G11n, L12y</li>
-                        <li>Translation, terminology, QA and resource management</li>
-                        <li>Automated quality improvement & workflow optimisation</li>
-                        <li>CMS localisation and continuous terminology management</li>
+                        <li>Technical audit (1–2 days): review TMS, MT setup, file formats and integration points.</li>
+                        <li>Pilot integration or MT trial: configuration, glossary, QA and short feedback loop.</li>
+                        <li>Support retainer: rapid-response troubleshooting and continuous optimisation.</li>
                     </ul>
-
-                    <h3>Background & Research</h3>
-                    <p>Mathematician with research experience at Emory Medical School, Georgia Tech and Medical University of South Carolina. Main interest: biomathematics — delayed differential equations for cancer growth analysis.</p>
                 </div>
             </div>
         </div>
@@ -159,7 +176,6 @@
     <section id="contact" class="contact-section">
         <div class="container contact-inner">
             <div class="contact-visual" aria-hidden="true">
-                <!-- dekoracyjne SVG -->
                 <svg viewBox="0 0 800 400" preserveAspectRatio="none" class="contact-wave">
                     <defs>
                         <linearGradient id="g1" x1="0" x2="1">
@@ -173,13 +189,13 @@
 
             <div class="contact-grid">
                 <div class="contact-card">
-                    <h2>Contact</h2>
-                    <p class="contact-lead">Get in touch to discuss localization, process optimisation or to book a consultation.</p>
+                    <h2>Contact & Technical Review</h2>
+                    <p class="contact-lead">Request a free scoping call for a technical audit or book an emergency troubleshooting session.</p>
 
                     <div class="contact-items">
-                        <a class="contact-item" href="mailto:replace-with-your-email@example.com">
+                        <a class="contact-item" href="mailto:mocek.w@gmail.com">
                             <span class="icon mail" aria-hidden="true">✉️</span>
-                            <span class="text">replace-with-your-email@example.com</span>
+                            <span class="text">mocek.w@gmail.com</span>
                         </a>
 
                         <a class="contact-item" href="https://www.linkedin.com/in/wmocek/" target="_blank" rel="noopener noreferrer">
@@ -187,29 +203,27 @@
                             <span class="text">linkedin.com/in/wmocek</span>
                         </a>
 
-                        <a class="contact-item" href="tel:+48-000-000-000" aria-hidden="true">
+                        <a class="contact-item" href="tel:+48-667-295-982" aria-hidden="true">
                             <span class="icon phone" aria-hidden="true">📞</span>
-                            <span class="text">+48 • your-phone (optional)</span>
+                            <span class="text">+48 • 667-295-982</span>
                         </a>
                     </div>
 
                     <div class="contact-actions">
-                        <a class="btn primary" href="https://calendly.com/lekcja/meet-math-online" target="_blank" rel="noopener noreferrer">
-                            Book a meeting — Calendly
-                        </a>
-                        <a class="btn ghost" href="#services">See Services</a>
+                        <a class="btn primary" href="#booking">Book a consultation</a>
+                        <a class="btn ghost" href="#services">See services</a>
                     </div>
                 </div>
 
                 <div class="contact-highlight" aria-hidden="false">
                     <div class="highlight-inner">
-                        <h3>Expertise & Tools</h3>
+                        <h3>Typical deliverables</h3>
                         <ul>
-                            <li>TMS & CAT tools</li>
-                            <li>SDL TRADOS (certified)</li>
-                            <li>Memsource trainer / PureFluent</li>
+                            <li>Integration scripts / connectors (GitHub, CMS, S3)</li>
+                            <li>MT profiles & glossaries, QA reports</li>
+                            <li>Documentation, runbooks and emergency support</li>
                         </ul>
-                        <p class="small">Remote work from Poland — available across time zones.</p>
+                        <p class="small">Available for short pilots, project work and retainer support.</p>
                     </div>
                 </div>
             </div>
@@ -222,7 +236,6 @@
             try {
                 var home = document.getElementById('home');
                 if (!home) return;
-                // wysokość paska nawigacji (jeśli jest stały)
                 var nav = document.querySelector('nav');
                 var navHeight = nav ? nav.getBoundingClientRect().height : 0;
                 var top = home.getBoundingClientRect().top + window.pageYOffset - navHeight - 8;
@@ -230,7 +243,41 @@
             } catch (e) {
                 // fail silently
             }
+
+            // NAV TOGGLE: accessibility + close on link click
+            var toggle = document.querySelector('.nav-toggle');
+            var navLinks = document.getElementById('navLinks');
+            var body = document.body;
+
+            function setNav(open) {
+                if (!navLinks || !toggle) return;
+                navLinks.classList.toggle('open', open);
+                toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+                body.classList.toggle('no-scroll', open);
+                if (open) toggle.focus();
+            }
+
+            if (toggle) {
+                toggle.addEventListener('click', function () {
+                    setNav(!navLinks.classList.contains('open'));
+                });
+            }
+
+            // close menu when a navigation link is clicked (mobile)
+            navLinks && navLinks.addEventListener('click', function (e) {
+                var t = e.target;
+                if (t.tagName === 'A' && window.innerWidth < 900) {
+                    setNav(false);
+                }
+            });
+
+            // close on ESC
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+                    setNav(false);
+                }
+            });
         });
     </script>
- </body>
+</body>
 </html>
