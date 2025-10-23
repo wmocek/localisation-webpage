@@ -1304,3 +1304,37 @@ html, body {
     word-break: break-word !important;
   }
 }
+
+/* Calendly widget — prevent internal scrolling on mobile, increase height */
+@media (max-width: 900px) {
+  .booking-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .calendly-inline-widget {
+    min-height: 1000px !important;
+    height: 1000px !important;
+    overflow: hidden !important;
+  }
+
+  .calendly-inline-widget iframe {
+    overflow: hidden !important;
+    -webkit-overflow-scrolling: auto !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .calendly-inline-widget {
+    min-height: 1100px !important;
+    height: 1100px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .calendly-inline-widget {
+    min-height: 1200px !important;
+    height: 1200px !important;
+  }
+}
