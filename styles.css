@@ -1305,36 +1305,218 @@ html, body {
   }
 }
 
-/* Calendly widget — prevent internal scrolling on mobile, increase height */
-@media (max-width: 900px) {
-  .booking-wrapper {
-    width: 100%;
-    margin: 0 auto;
-    overflow: hidden;
-  }
+/* Testimonials & Clients section — marketing-focused with visual branding */
+.testimonials-section {
+  padding: 80px 0;
+  background: linear-gradient(to bottom, #fafafa 0%, #ffffff 100%);
+}
 
-  .calendly-inline-widget {
-    min-height: 1000px !important;
-    height: 1000px !important;
-    overflow: hidden !important;
-  }
+.testimonials-lead {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 48px;
+}
 
-  .calendly-inline-widget iframe {
-    overflow: hidden !important;
-    -webkit-overflow-scrolling: auto !important;
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 28px;
+  margin-bottom: 72px;
+}
+
+.testimonial-card {
+  background: #fff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0,113,227,0.15);
+}
+
+.testimonial-card.featured {
+  grid-column: span 2;
+  background: linear-gradient(135deg, #f5f9ff 0%, #ffffff 100%);
+  border: 1px solid rgba(0,113,227,0.12);
+}
+
+@media (max-width: 1100px) {
+  .testimonial-card.featured {
+    grid-column: span 1;
   }
 }
 
-@media (max-width: 600px) {
-  .calendly-inline-widget {
-    min-height: 1100px !important;
-    height: 1100px !important;
+.quote-icon {
+  font-size: 4.5rem;
+  line-height: 1;
+  color: var(--primary);
+  opacity: 0.12;
+  position: absolute;
+  top: 12px;
+  left: 20px;
+  font-family: Georgia, serif;
+  pointer-events: none;
+}
+
+.testimonial-card blockquote {
+  margin: 28px 0 32px;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--text);
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Author photo with company logo support */
+.author-photo {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0,113,227,0.18);
+  overflow: hidden;
+}
+
+.author-photo.wordbee-logo {
+  background: #fff;
+  padding: 4px;
+  border: 2px solid #f0f0f0;
+}
+
+.author-photo.wordbee-logo img {
+  filter: none;
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+/* Fallback if image doesn't load */
+.author-photo.wordbee-logo img[alt]:after {
+  content: attr(alt);
+  font-size: 0.7rem;
+  color: #666;
+}
+
+.author-photo.betranslated-logo {
+  background: #fff;
+  padding: 4px;
+  border: 2px solid #f0f0f0;
+}
+
+.author-photo.betranslated-logo img {
+  filter: none;
+}
+
+/* Client logos — enhanced styling */
+.clients-logos {
+  margin-top: 72px;
+  padding: 48px 32px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+}
+
+.logos-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.client-logo {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.92;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.client-logo:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.client-logo img {
+  max-width: 100%;
+  height: 48px;
+  object-fit: contain;
+  filter: none !important;
+  transition: all 0.3s ease;
+}
+
+.client-logo svg {
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.08));
+  transition: all 0.3s ease;
+}
+
+.client-logo:hover svg {
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.12));
+}
+
+/* Mobile adjustments */
+@media (max-width: 900px) {
+  .logos-grid {
+    gap: 24px;
+  }
+
+  .client-logo img {
+    height: 40px;
+  }
+
+  .client-logo svg {
+    transform: scale(0.9);
   }
 }
 
 @media (max-width: 420px) {
-  .calendly-inline-widget {
-    min-height: 1200px !important;
-    height: 1200px !important;
+  .logos-grid {
+    gap: 18px;
   }
+
+  .client-logo img {
+    height: 36px;
+  }
+
+  .client-logo svg {
+    transform: scale(0.82);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* uwzględnia wysokość nav */
+}
+
+/* Optional: highlight animation when scrolling to #clients */
+#clients {
+  scroll-margin-top: 40px;
+}
+
+#clients:target {
+  animation: highlight-pulse 1.2s ease-out;
+}
+
+@keyframes highlight-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.92; transform: scale(1.02); }
 }
