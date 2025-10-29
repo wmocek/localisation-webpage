@@ -34,6 +34,7 @@
                     <li><a href="#services">Services</a></li>
                     <li><a href="#clients">Clients</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#support-request" class="nav-support-ticket">Open a Support Ticket</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -343,6 +344,173 @@
             <a class="btn ghost" href="#contact">Get in touch</a>
         </div>
     </div>
+</section> <!-- koniec testimonials -->
+
+<!-- Quick Support Request section -->
+<section id="support-request" class="support-section">
+    <div class="container">
+        <h2>Need Help? Get a Quick Quote</h2>
+        <p class="support-lead">Describe your TMS issue, upload files, or request a consultation. I'll respond within 4 hours with a solution or quote.</p>
+        
+        <div class="support-grid">
+            <!-- Support form -->
+            <div class="support-form-card">
+                <form id="supportForm" class="support-form">
+                    <div class="form-group">
+                        <label for="requestType">Type of Request</label>
+                        <select id="requestType" name="request_type" required>
+                            <option value="">Select request type...</option>
+                            <option value="🚨 Emergency Fix (same day)">🚨 Emergency Fix (same day)</option>
+                            <option value="🔗 TMS Integration Issue">🔗 TMS Integration Issue</option>
+                            <option value="📦 Platform Migration">📦 Platform Migration</option>
+                            <option value="🎓 Team Training">🎓 Team Training</option>
+                            <option value="🔍 Workflow Audit">🔍 Workflow Audit</option>
+                            <option value="💰 Get Quote">💰 Get Quote</option>
+                            <option value="❓ Other">❓ Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="clientName">Your Name</label>
+                            <input type="text" id="clientName" name="client_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone (optional)</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="currentTMS">Current TMS/CAT Tools</label>
+                        <input type="text" id="currentTMS" name="current_tms" placeholder="e.g., Wordbee, Phrase, Memsource, Trados...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="urgency">Urgency Level</label>
+                        <div class="urgency-options">
+                            <label class="radio-option">
+                                <input type="radio" name="urgency" value="📅 Standard (2-3 days)" checked>
+                                <span class="radio-custom low">📅 Standard (2-3 days)</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="urgency" value="⚡ Urgent (24 hours)">
+                                <span class="radio-custom medium">⚡ Urgent (24 hours)</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="urgency" value="🔥 Critical (same day)">
+                                <span class="radio-custom high">🔥 Critical (same day)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Describe Your Issue/Request</label>
+                        <textarea id="description" name="description" rows="4" required 
+                                  placeholder="Please describe your problem, error messages, or what you need help with..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fileUpload">Upload Files (optional)</label>
+                        <input type="file" id="fileUpload" name="files" multiple 
+                               accept=".txt,.doc,.docx,.xlsx,.xml,.tmx,.tbx,.zip,.pdf,.png,.jpg,.jpeg"
+                               style="width:100%;padding:12px;border:2px dashed #ddd;border-radius:8px;background:#f9f9f9;">
+                        <small style="color:#666;font-size:0.9rem;display:block;margin-top:8px;">
+                            📎 Max 10MB each)<br>
+                            Files will be saved to a secure folder in Google Drive
+                        </small>
+                        <div id="fileList" style="margin-top:12px;"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="subscribe" value="Yes">
+                            <span class="checkbox-custom"></span>
+                            Subscribe to TMS tips and updates (optional)
+                        </label>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn primary large">
+                            <span class="btn-text">Send Request</span>
+                            <span class="btn-loading" style="display:none;">Sending...</span>
+                        </button>
+                        <p class="form-note">
+                            ⚡ Response within 4 hours during business days<br>
+                            🔒 Your data is handled securely
+                        </p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Support info sidebar -->
+            <div class="support-info">
+                <div class="support-info-card">
+                    <h3>How it works</h3>
+                    <div class="support-steps">
+                        <div class="step">
+                            <span class="step-number">1</span>
+                            <div>
+                                <strong>Describe your issue</strong>
+                                <p>Tell me what's broken, what you need, or upload relevant files</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">2</span>
+                            <div>
+                                <strong>Get a quick response</strong>
+                                <p>I'll analyze and respond within 4 hours with next steps</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">3</span>
+                            <div>
+                                <strong>Fast resolution</strong>
+                                <p>Emergency fixes same day, standard requests within 2-3 days</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="support-pricing-card">
+                    <h3>Pricing</h3>
+                    <div class="pricing-list">
+                        <div class="price-item">
+                            <span class="service">Emergency fix</span>
+                            <span class="price">$150/hour</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service">Standard support</span>
+                            <span class="price">$95/hour</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service">Training session</span>
+                            <span class="price">$120/hour</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service">Project quote</span>
+                            <span class="price">Free</span>
+                        </div>
+                    </div>
+                    <p class="pricing-note">
+                        💡 <strong>Free consultation</strong> for complex projects<br>
+                        📧 <strong>No charge</strong> for quick questions via email
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section id="contact" class="contact-section">
@@ -476,5 +644,168 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     </script>
+
+    <!-- Success message (pokazuje się po #success in URL) -->
+<div id="success-message" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);
+    background:#fff;padding:40px;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.15);
+    text-align:center;z-index:10000;max-width:400px;">
+    <h3 style="color:#059669;margin-bottom:16px;">✅ Request Sent!</h3>
+    <p>Thank you! I'll respond within 4 hours during business days.</p>
+    <button onclick="this.parentElement.style.display='none';window.history.replaceState({}, '', '/');" 
+            style="margin-top:20px;padding:10px 20px;background:#0071e3;color:#fff;border:none;border-radius:8px;cursor:pointer;">
+        Close
+    </button>
+</div>
+
+<script>
+if (window.location.hash === '#success') {
+    document.getElementById('success-message').style.display = 'block';
+}
+</script>
+
+<script>
+// Google Sheets form submission - Base64 file upload
+document.getElementById('supportForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const submitBtn = document.querySelector('.btn.primary.large');
+    const btnText = submitBtn.querySelector('.btn-text');
+    const btnLoading = submitBtn.querySelector('.btn-loading');
+    
+    // Show loading state
+    btnText.style.display = 'none';
+    btnLoading.style.display = 'inline';
+    submitBtn.disabled = true;
+    
+    // Collect form data
+    const formData = new FormData(this);
+    const fileInput = document.getElementById('fileUpload');
+    const clientName = document.getElementById('clientName').value;
+    const timestamp = new Date().toLocaleString().replace(/[/:,]/g, '-');
+    
+    // Google Apps Script URL
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzkXMm4nGawRwXtRo6IpOStsRNXzkrbyec4FiQIfEC6nI1j753-K-pY8DuQLR2XNH3c/exec';
+    
+    // Process files and convert to Base64
+    const processFiles = async () => {
+        const uploadData = new FormData();
+        
+        // Add form fields
+        for (let [key, value] of formData.entries()) {
+            if (key !== 'files') {
+                uploadData.append(key, value);
+            }
+        }
+        
+        // Add timestamp and folder name
+        uploadData.append('timestamp', new Date().toLocaleString());
+        uploadData.append('folderName', `${timestamp}_${clientName.replace(/[^a-zA-Z0-9]/g, '_')}`);
+        
+        // Process files
+        if (fileInput.files.length > 0) {
+            console.log('Processing', fileInput.files.length, 'files...');
+            let fileNames = [];
+            
+            for (let i = 0; i < fileInput.files.length; i++) {
+                const file = fileInput.files[i];
+                console.log(`Processing file ${i}:`, file.name, file.size, 'bytes');
+                
+                // Convert file to Base64
+                const base64 = await new Promise((resolve) => {
+                    const reader = new FileReader();
+                    reader.onload = () => {
+                        const base64String = reader.result.split(',')[1]; // Remove data:... prefix
+                        resolve(base64String);
+                    };
+                    reader.readAsDataURL(file);
+                });
+                
+                // Add file data as form fields
+                uploadData.append(`file_${i}_name`, file.name);
+                uploadData.append(`file_${i}_type`, file.type || 'application/octet-stream');
+                uploadData.append(`file_${i}_size`, file.size.toString());
+                uploadData.append(`file_${i}_data`, base64);
+                
+                fileNames.push(`${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`);
+                console.log(`File ${i} converted to Base64:`, file.name);
+            }
+            
+            uploadData.append('fileCount', fileInput.files.length.toString());
+            uploadData.append('fileNames', fileNames.join(', '));
+        } else {
+            uploadData.append('fileCount', '0');
+        }
+        
+        console.log('All form data prepared, sending...');
+        
+        // Send to Google Apps Script
+        return fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            body: uploadData,
+            redirect: 'follow'
+        });
+    };
+    
+    // Execute async file processing
+    processFiles()
+    .then(response => {
+        console.log('Response status:', response.status);
+        console.log('Response URL:', response.url);
+        return response.text();
+    })
+    .then(result => {
+        console.log('Response text:', result);
+        
+        if (result.includes('success') || result.includes('Success') || result.includes('{"status":"success"')) {
+            document.getElementById('success-message').style.display = 'block';
+            this.reset();
+            document.getElementById('fileList').innerHTML = '';
+        } else if (result.includes('<!DOCTYPE html>') || result.includes('<html')) {
+            console.log('Received HTML response (likely success)');
+            document.getElementById('success-message').style.display = 'block';
+            this.reset();
+            document.getElementById('fileList').innerHTML = '';
+        } else {
+            throw new Error('Unexpected response format: ' + result.substring(0, 100));
+        }
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        alert('There was an error sending your request. Please try again or contact me directly at mocek.w@gmail.com\n\nError: ' + error.message);
+    })
+    .finally(() => {
+        // Reset button state
+        btnText.style.display = 'inline';
+        btnLoading.style.display = 'none';
+        submitBtn.disabled = false;
+    });
+});
+
+// File preview functionality
+document.getElementById('fileUpload').addEventListener('change', function(e) {
+    const fileList = document.getElementById('fileList');
+    fileList.innerHTML = '';
+    
+    if (e.target.files.length > 0) {
+        const filesDiv = document.createElement('div');
+        filesDiv.style.cssText = 'padding:12px;background:#f8f8f8;border-radius:8px;margin-top:8px;';
+        
+        const title = document.createElement('strong');
+        title.textContent = `${e.target.files.length} file(s) selected:`;
+        title.style.cssText = 'display:block;margin-bottom:8px;color:#333;';
+        filesDiv.appendChild(title);
+        
+        Array.from(e.target.files).forEach((file, index) => {
+            const fileItem = document.createElement('div');
+            fileItem.style.cssText = 'margin:4px 0;font-size:0.9rem;color:#666;';
+            fileItem.textContent = `${index + 1}. ${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`;
+            filesDiv.appendChild(fileItem);
+        });
+        
+        fileList.appendChild(filesDiv);
+    }
+});
+</script>
+
 </body>
 </html>
