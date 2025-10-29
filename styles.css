@@ -3,6 +3,10 @@
     --secondary-color: #0071e3;
     --background-color: #ffffff;
     --text-color: #1d1d1f;
+    --text-muted: #6b7280;
+    --primary: #0071e3;
+    --primary-light: #00c2ff;
+    --text: #1d1d1f;
     --nav-height: 64px; /* use by JS to compute scroll offset; adjust if nav height changes */
 }
 
@@ -297,7 +301,7 @@ h1 {
     position: relative;
 }
 
-.services-list li
+.services-list li:before {
     content: "→";
     color: var(--secondary-color);
     position: absolute;
@@ -860,10 +864,6 @@ h3 {
 }
 
 /* Mobile-first responsive tweaks to fix overlapping hero and cropped photo */
-:root {
-  --nav-height: 64px; /* use by JS to compute scroll offset; adjust if nav height changes */
-}
-
 .hero-section {
   padding-top: calc(var(--nav-height) + 18px);
   padding-bottom: 28px;
@@ -1862,4 +1862,108 @@ html {
   .radio-option {
     padding: 8px;
   }
+}
+
+/* File upload styles */
+.file-upload-area {
+  border: 2px dashed #e5e7eb;
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+  background: #f9fafb;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.file-upload-area:hover {
+  border-color: var(--primary);
+  background: #f0f9ff;
+}
+
+.file-upload-area.dragover {
+  border-color: var(--primary);
+  background: #f0f9ff;
+}
+
+#fileUpload {
+  display: none;
+}
+
+.upload-icon {
+  font-size: 2rem;
+  color: #9ca3af;
+  margin-bottom: 8px;
+}
+
+.upload-text {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.upload-hint {
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+
+#fileList {
+  margin-top: 16px;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: #f3f4f6;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.file-icon {
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+
+.file-info {
+  flex: 1;
+}
+
+.file-name {
+  font-weight: 500;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.file-size {
+  color: #6b7280;
+  font-size: 0.8rem;
+}
+
+/* Success message */
+#success-message {
+  display: none;
+  background: #d1fae5;
+  border: 1px solid #10b981;
+  color: #047857;
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 16px;
+  text-align: center;
+}
+
+/* Button loading state */
+.btn-loading {
+  display: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
